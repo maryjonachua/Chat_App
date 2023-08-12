@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
 // fetching data from Backend
 const ChatPage = () =>{
 
+  const [chats,setChats] = useState([])
+
     const fetchChats = async() =>{
         // fetching api using axios
         // frm server path
-        axios.defaults.baseURL = 'http://localhost:5000'; 
+        axios.defaults.baseURL = 'http://localhost:500'; 
 
-        const data = await axios.get('/api/chat')
+        const {data} = await axios.get('/api/chat')
 
-        console.log(data)
+        setChats(data)
     }
 // run when the component run for the first time
   useEffect(()=>{
@@ -21,7 +23,9 @@ const ChatPage = () =>{
 
 
   return (
-    <div>ChatPage</div>
+    <div>
+      {chats.map((chat)=><div key={chat._id}>{chat.chatName}</div>)}
+    </div>
   )
 }
 

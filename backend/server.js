@@ -1,13 +1,13 @@
 const express = require("express")
 const dotenv = require("dotenv")
-const cors = require('cors')
+//const cors = require('cors')
 const chats = require("./data/data")
 
 const app = express()
 
 dotenv.config()
 
-app.use(cors())
+//app.use(cors())
 
 
 
