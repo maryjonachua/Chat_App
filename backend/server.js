@@ -2,11 +2,15 @@ const express = require("express")
 const dotenv = require("dotenv")
 //const cors = require('cors')
 const chats = require("./data/data")
+const connectDB = require("./config/db")
+const colors = require('colors')
+
+
 
 const app = express()
 
 dotenv.config()
-
+connectDB()
 //app.use(cors())
 
 
@@ -49,6 +53,6 @@ const PORT = process.env.PORT || 5000
 
 
 // cors
-app.listen(PORT, () => console.log(`Server Started on Port ${PORT}`))
+app.listen(PORT, () => console.log(`Server Started on Port ${PORT}`.yellow.bold))
 
   
