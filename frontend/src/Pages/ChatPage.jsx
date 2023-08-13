@@ -10,7 +10,7 @@ const ChatPage = () =>{
     const fetchChats = async() =>{
         // fetching api using axios
         // frm server path
-        axios.defaults.baseURL = 'http://localhost:500'; 
+        axios.defaults.baseURL = 'http://localhost:501'; 
 
         const {data} = await axios.get('/api/chat')
 

@@ -1,20 +1,25 @@
 const express = require("express")
 const dotenv = require("dotenv")
-//const cors = require('cors')
+const cors = require('cors')
 const chats = require("./data/data")
 const connectDB = require("./config/db")
 const colors = require('colors')
 const userRoutes = require('./routes/userRoutes')
+const chatRoutes = require('./routes/chatRoutes')
 const { notFound, errorHandler } = require("./middleware/errorMiddleware")
 
 
 
 
 dotenv.config()
+
 connectDB()
 
 
+
 const app = express()
+
+app.use(cors())
 
 app.use(express.json()) // to accept JSON data
 
@@ -27,6 +32,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/user',userRoutes)
+app.use('/api/chat',chatRoutes)
 
 // error handling middleware
 app.use(notFound)

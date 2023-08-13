@@ -90,7 +90,9 @@ function SignUp() {
                 return
             } 
 
+            axios.defaults.baseURL = 'http://localhost:501'; 
             try{
+
                 const config = {
                     headers:{
                         "Content-type":"application/json"
@@ -148,7 +150,7 @@ function SignUp() {
                  <Input type={show? 'text':'password'} placeholder='Enter your password' onChange={(e)=>setPassword(e.target.value)} />
 
                  <InputRightElement w={'4.5rem'}>
-                        <Button h={'2.59rem'} w={'4.5rem'} onClick={handleClick}>
+                        <Button style={{marginRight:'3.5px'}}h={'2rem'} w={'4.5rem'} onClick={handleClick}>
                             {show? "Hide" : "Show"}
                         </Button>
                  </InputRightElement>
@@ -165,7 +167,7 @@ function SignUp() {
                  <Input type={show? 'text':'password'} placeholder='Confirm password' onChange={(e)=>setConfirmpassword(e.target.value)} />
 
                  <InputRightElement w={'4.5rem'}>
-                        <Button h={'2.59rem'} w={'4.5rem'} onClick={handleClick}>
+                        <Button style={{marginRight:'3.5px'}} h={'2rem'} w={'4.5rem'} onClick={handleClick}>
                             {show? "Hide" : 'Show' }
                         </Button>
                  </InputRightElement>
