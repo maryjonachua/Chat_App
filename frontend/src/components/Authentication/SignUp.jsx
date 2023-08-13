@@ -86,8 +86,9 @@ function SignUp() {
                     isClosable: true,
                     position: 'top'
                 })
+                setLoading(false)
                 return
-            }
+            } 
 
             try{
                 const config = {
@@ -107,7 +108,7 @@ function SignUp() {
                 localStorage.setItem('userInfo',JSON.stringify(data))
 
                 setLoading(false)
-
+ 
                 history.push('/chats')
 
 

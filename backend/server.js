@@ -21,13 +21,12 @@ app.use(express.json()) // to accept JSON data
 
 
 // request = req response = res
-app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{ 
     res.send('API is Running') 
 
 })
 
 app.use('/api/user',userRoutes)
-
 
 // error handling middleware
 app.use(notFound)
