@@ -40,7 +40,7 @@ function SignUp() {
             <InputGroup>
                  <Input type={show? 'text':'password'} placeholder='Enter your password' onChange={(e)=>setPassword(e.target.value)} />
 
-                 <InputRightElement>
+                 <InputRightElement w={'4.5rem'}>
                         <Button h={'2.59rem'} w={'4.5rem'} onClick={handleClick}>
                             {show? "Hide" : "Show"}
                         </Button>
@@ -57,9 +57,9 @@ function SignUp() {
             <InputGroup size={'md'}>
                  <Input type={show? 'text':'password'} placeholder='Confirm password' onChange={(e)=>setConfirmpassword(e.target.value)} />
 
-                 <InputRightElement>
+                 <InputRightElement w={'4.5rem'}>
                         <Button h={'2.59rem'} w={'4.5rem'} onClick={handleClick}>
-                            {show? "Hide" : "Show"}
+                            {show? "Hide" : 'Show' }
                         </Button>
                  </InputRightElement>
             </InputGroup>
