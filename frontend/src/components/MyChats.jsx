@@ -28,7 +28,7 @@ function MyChats({ fetchAgain }) {
       axios.defaults.baseURL = 'http://localhost:501';
 
       const { data } = await axios.get("/api/chat", config);
-      console.log(data)
+      
       
 
       setChats(data);

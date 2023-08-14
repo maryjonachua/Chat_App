@@ -63,7 +63,7 @@ export const GroupChatModal = ({children}) => {
       axios.defaults.baseURL = 'http://localhost:501';
 
       const { data } = await axios.get(`/api/user?search=${search}`, config);
-      console.log(data);
+     
       setLoading(false);
       setSearchResult(data);
     } catch (error) {
