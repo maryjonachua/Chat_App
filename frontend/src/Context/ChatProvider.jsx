@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import {useHistory} from 'react-router-dom'
+
 
 const ChatContext = createContext();
 
@@ -7,23 +8,24 @@ const ChatProvider = ({ children }) => {
   const [selectedChat, setSelectedChat] = useState();
   const [user, setUser] = useState();
   const [notification, setNotification] = useState([]);
-  const [chats, setChats] = useState([]);
+  const [chats, setChats] = useState();
 
-  const history = useHistory();
+  const history = useHistory()
 
-//   fetch local storage
+
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     setUser(userInfo);
 
-    if (!userInfo) {
-        history.push("/");
+    if (!userInfo){
+      //history.push('/')
+      history.push('/shsh')
+
     }
-    
+
   }, [history]);
 
   return (
-    // use of context put the useStates on value
     <ChatContext.Provider
       value={{
         selectedChat,
@@ -41,7 +43,6 @@ const ChatProvider = ({ children }) => {
   );
 };
 
-// allow state to use to whole app
 export const ChatState = () => {
   return useContext(ChatContext);
 };
