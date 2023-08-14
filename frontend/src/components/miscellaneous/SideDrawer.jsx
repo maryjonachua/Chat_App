@@ -14,6 +14,9 @@ import axios from "axios";
 import ChatLoading from '../ChatLoading';
 import { UserListItem } from '../userAvatar/UserListItem';
 import {  Spinner } from '@chakra-ui/spinner';
+import { getSender } from '../../config/ChatLogics';
+import Badge from '@material-ui/core/Badge';
+
 
 function SideDrawer() {
     const [search, setSearch] = useState("");
@@ -79,7 +82,7 @@ function SideDrawer() {
   };
 
   const accessChat = async (userId) => {
-    console.log(userId);
+    //console.log(userId);
     
 
     try {
@@ -134,14 +137,17 @@ function SideDrawer() {
         <div>
           <Menu>
             <MenuButton p={1}>
-              {/* <NotificationBadge
-                count={notification.length}
-                effect={Effect.SCALE}
-              /> */}
+              
+                <Badge badgeContent={notification.length} 
+                color="primary">
+          
+                </Badge>
+              
+              <span className='e-badge e-badge-danger e-badge-overlap e-badge-notification e-badge-circle'></span>
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
 
-            {/* <MenuList pl={2}>
+            <MenuList p={2} m={'auto'}>
                   {!notification.length && "No New Messages"}
               {notification.map((notif) => (
                 <MenuItem
@@ -158,7 +164,7 @@ function SideDrawer() {
               ))}
             
           
-            </MenuList> */}
+            </MenuList>
 
             </Menu>
             <Menu>

@@ -43,7 +43,7 @@ const [istyping, setIsTyping] = useState(false);
            `/api/message/${selectedChat._id}`,
            config
         );
-        console.log(messages)
+        //console.log(messages)
         setMessages(data);
         setLoading(false);
   
@@ -120,16 +120,18 @@ const [istyping, setIsTyping] = useState(false);
           !selectedChatCompare || // if chat is not selected or doesn't match current chat
           selectedChatCompare._id !== newMessageRecieved.chat._id
         ) {
-          // if (!notification.includes(newMessageRecieved)) {
-          //   setNotification([newMessageRecieved, ...notification]);
-          //   setFetchAgain(!fetchAgain);
-          // }
+          if (!notification.includes(newMessageRecieved)) {
+            setNotification([newMessageRecieved, ...notification]);
+            setFetchAgain(!fetchAgain);
+          }
         } else {
           setMessages([...messages, newMessageRecieved]);
         }
       });
     });
   
+    //console.log(notification)
+
     const typingHandler = (e) => {
       setNewMessage(e.target.value);
   
