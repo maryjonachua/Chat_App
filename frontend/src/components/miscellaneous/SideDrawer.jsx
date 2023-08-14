@@ -138,13 +138,16 @@ function SideDrawer() {
           <Menu>
             <MenuButton p={1}>
               
-                <Badge badgeContent={notification.length} 
-                color="primary">
-          
+                <Badge anchorOrigin={{
+    vertical: 'top',
+    horizontal: 'right',
+  }} badgeContent={notification.length} 
+                color="secondary">
+                  <BellIcon fontSize="2xl" m={1} />
                 </Badge>
               
               <span className='e-badge e-badge-danger e-badge-overlap e-badge-notification e-badge-circle'></span>
-              <BellIcon fontSize="2xl" m={1} />
+              
             </MenuButton>
 
             <MenuList p={2} m={'auto'}>
