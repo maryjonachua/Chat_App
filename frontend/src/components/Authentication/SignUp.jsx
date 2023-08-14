@@ -32,7 +32,7 @@ function SignUp() {
               return
         }
 
-        if(pics.type ==="image/jpeg" || pics.type ==="image/jpeg"){
+        if(pics.type ==="image/jpeg" || pics.type ==="image/png"){
             const data = new FormData()
             data.append('file',pics)
             // chat-app is the name created on upload preset cloudinary
